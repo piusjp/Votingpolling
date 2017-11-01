@@ -5,10 +5,18 @@
  */
 package com.Votingpolling.Services;
 
+import com.Votingpolling.Entities.UserEntity;
+import java.util.List;
+
 /**
  *
  * @author HP
  */
-public class UserService {
+public interface UserService {
     
+    void newuser(UserEntity userData);
+    
+    List<UserEntity> salluser();
+    
+    UserEntity suseremail(String email);
 }

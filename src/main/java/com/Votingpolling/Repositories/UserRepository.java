@@ -5,10 +5,22 @@
  */
 package com.Votingpolling.Repositories;
 
+import com.Votingpolling.Entities.UserEntity;
+import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.data.rest.core.annotation.RestResource;
+
 /**
  *
  * @author HP
  */
-public class UserRepository {
+@RestResource
+public interface UserRepository extends JpaRepository<UserEntity, Long>{
     
+    public List<UserEntity> findUserEntitiesByUserId(Long userId);
+    
+    @Query("select u from UserEntity u where u.userEmail=:email")
+    public UserEntity suseremail(@Param("email")String email);
 }
