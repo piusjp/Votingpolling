@@ -41,15 +41,20 @@ public class UserController {
     }
     
     //show all user
-    @RequestMapping(value = "/salluser",method = RequestMethod.GET)
-    public ResponseEntity<List<UserEntity>> salluser(){
-        return new ResponseEntity<>(userService.salluser(),HttpStatus.FOUND);
+    @RequestMapping(value = "/alluser",method = RequestMethod.GET)
+    public ResponseEntity<List<UserEntity>> alluser(){
+        return new ResponseEntity<>(userService.alluser(),HttpStatus.FOUND);
     }
     
     //show user by email
-    @RequestMapping(value = "/suseremail/{email}",method = RequestMethod.GET)
-    public ResponseEntity<UserEntity> suseremail(@PathVariable String email){
-        System.out.println(userService.suseremail(email));
-        return ResponseEntity.ok(userService.suseremail(email));
+    @RequestMapping(value = "/userbymail",method = RequestMethod.POST)
+    public ResponseEntity<UserEntity> userbymail(@RequestBody UserEntity data){
+        return new ResponseEntity<>(userService.userbymail(data),HttpStatus.FOUND);
+    }
+    
+    //show user by userID
+    @RequestMapping(value = "/userbyid",method = RequestMethod.POST)
+    public ResponseEntity<UserEntity> userbyid(@RequestBody UserEntity data){
+        return new ResponseEntity<>(userService.userbyid(data),HttpStatus.FOUND);
     }
 }

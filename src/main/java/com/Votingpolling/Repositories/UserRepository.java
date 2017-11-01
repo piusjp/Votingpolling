@@ -19,8 +19,8 @@ import org.springframework.data.rest.core.annotation.RestResource;
 @RestResource
 public interface UserRepository extends JpaRepository<UserEntity, Long>{
     
-    public List<UserEntity> findUserEntitiesByUserId(Long userId);
+    public UserEntity findUserEntitiesByUserId(Long userId);
     
-    @Query("select u from UserEntity u where u.userEmail=:email")
-    public UserEntity suseremail(@Param("email")String email);
+    @Query("select u from UserEntity u where u.userEmail= :userEmail")
+    public UserEntity userbymail(@Param("userEmail") String userEmail);
 }

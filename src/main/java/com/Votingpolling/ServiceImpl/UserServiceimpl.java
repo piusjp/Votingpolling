@@ -30,13 +30,17 @@ public class UserServiceimpl implements UserService{
     }
     
     @Override
-    public List<UserEntity> salluser(){
+    public List<UserEntity> alluser(){
         return userRepo.findAll();
     }
     
     @Override
-    public UserEntity suseremail(String email){
-        System.out.println(email);
-        return userRepo.suseremail(email);
+    public UserEntity userbyid(UserEntity data){
+        return userRepo.findUserEntitiesByUserId(data.getUserId());
+    }
+    
+    @Override
+    public UserEntity userbymail(UserEntity data){
+        return userRepo.userbymail(data.getUserEmail());
     }
 }

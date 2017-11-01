@@ -16,7 +16,9 @@ public interface UserService {
     
     void newuser(UserEntity userData);
     
-    List<UserEntity> salluser();
+    List<UserEntity> alluser();
     
-    UserEntity suseremail(String email);
+    UserEntity userbymail(UserEntity data);
+    
+    UserEntity userbyid(UserEntity data);
 }
