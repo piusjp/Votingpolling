@@ -57,4 +57,10 @@ public class UserController {
     public ResponseEntity<UserEntity> userbyid(@RequestBody UserEntity data){
         return new ResponseEntity<>(userService.userbyid(data),HttpStatus.FOUND);
     }
+    
+    //show user by userName
+    @RequestMapping(value = "/userbyname",method = RequestMethod.POST)
+    public ResponseEntity<UserEntity> userbyname(@RequestBody UserEntity data){
+        return new ResponseEntity<>(userService.userbyname(data),HttpStatus.FOUND);
+    }
 }

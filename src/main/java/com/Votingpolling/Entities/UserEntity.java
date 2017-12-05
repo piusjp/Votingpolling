@@ -30,4 +30,10 @@ public class UserEntity {
     
     @Column
     private String userEmail;
+    
+    @Column
+    private String userPassword;
+    
+    @Column
+    private String userPhone;
 }

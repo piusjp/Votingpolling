@@ -21,4 +21,7 @@ public interface UserService {
     UserEntity userbymail(UserEntity data);
     
     UserEntity userbyid(UserEntity data);
+    
+    UserEntity userbyname(UserEntity data);
+    
 }

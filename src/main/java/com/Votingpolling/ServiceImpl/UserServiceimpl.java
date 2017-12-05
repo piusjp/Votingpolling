@@ -43,4 +43,9 @@ public class UserServiceimpl implements UserService{
     public UserEntity userbymail(UserEntity data){
         return userRepo.userbymail(data.getUserEmail());
     }
+
+    @Override
+    public UserEntity userbyname(UserEntity data) {
+        return userRepo.findUserEnititiesByUserName(data.getUserName());
+    }
 }
